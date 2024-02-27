@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h4 class="mt-4 text-center" >Complete los campos del formulario</h4>
+<form [formGroup] = "formulario" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Pepe">
+        <div class="text-danger" *ngIf="hasErrors('nombre', 'required')" > Campo Nombre es obligatorio </div>
+        <div class="text-danger" *ngIf="hasErrors('nombre', 'minlength')" > Campo nombre debe contener al menos 3 caracteres </div>
+    </div>
+    <div class="form-group">
+        <label for="apellidos" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="apellidos" formControlName="apellidos" placeholder="Grillo">
+    </div>
+    <div class="form-group">
+        <label for="empresa" class="form-label">Empresa</label>
+        <input type="text" class="form-control" id="empresa" formControlName="empresa" placeholder="">
+    </div>
+    <div class="form-group">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="number" class="form-control" id="telefono" formControlName="telefono" placeholder="">
+        <div class="text-danger" *ngIf="hasErrors('telefono', 'required')" > Campo Telefono es obligatorio </div>
+        <div class="text-danger" *ngIf="hasErrors('telefono', 'minlength')" > Campo Telefono debe contener al menos 9 caracteres</div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com">
+        <div class="text-danger" *ngIf="hasErrors('email', 'required')" > Campo Email es obligatorio </div>
+        <div class="text-danger" *ngIf="hasErrors('email', 'email')" > Campo Email incorrecto</div>
+    </div>
+    <input type="submit" value="Enviar" class="mt-4">
+    
+
+</form>
+</div>

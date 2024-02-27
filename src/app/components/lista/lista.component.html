@@ -1,0 +1,15 @@
+<div class="container">
+<h4 class="mt-4 text-center">Lista de Personas</h4>
+<p *ngIf="numPersonas == 1">Tienes {{numPersonas}} persona en la Agenda</p>
+<p *ngIf="numPersonas != 0 && numPersonas != 1">Tienes {{numPersonas}} personas en la Agenda</p>
+<br>
+
+<ul class="list-group" *ngFor="let persona of listaPersonas">
+    <li class="list-group-item">{{persona.nombre}}</li>
+    <li class="list-group-item">{{persona.apellidos}}</li>
+    <li class="list-group-item">{{persona.empresa}}</li>
+    <li class="list-group-item">{{persona.telefono}}</li>
+    <li class="list-group-item">{{persona.email}}</li>
+  </ul>
+
+</div>
